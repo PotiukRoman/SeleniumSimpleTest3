@@ -65,6 +65,8 @@ public class main {
 
         driver.get("https://www.olx.ua/uk/");
 
+
+
         WebElement element = driver.findElement(By.xpath("//input[@id='submit-searchmain']"));
         element.click();
 
@@ -74,15 +76,16 @@ public class main {
         WebElement element2 = driver.findElement(By.xpath("//div/ul/li/a[@id='a-category-1532']"));
         element2.click();
 
+        WebElement element3 = driver.findElement(By.xpath("//input[@name='q']"));
+        element3.sendKeys("жигулі");
+
+        WebElement element4 = driver.findElement(By.xpath("//input[@value='Знайти']"));
+        element4.click();
+
+
     }
 }
 
 //c:/Users/38099/Downloads/chromedriver.exe
 //c:/Users/arev/Downloads/chromedriver.exe
 
-// //a[@id='a-category-1532']
-//$$(".abs.categorySelectContainer")
-//$$("ul[id='categorySelectList'] a[data-name='Авто']")
-
-// data-icon_class="a-category-1532"
-//   //div/ul/li/a[@id='a-category-1532']

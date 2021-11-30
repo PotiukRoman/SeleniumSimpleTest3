@@ -40,13 +40,18 @@ public class main {
 */
 
 // Автоматизація тестування верстки getCssValue
+/*
         driver.get("https://dev.by/");
         WebElement element = driver.findElement(By.xpath("//a[text()='Вход']"));
         // String par=element.getCssValue("display");
         String par=element.getCssValue("transition");
         System.out.println(par);
+*/
 
-
+//Клік в браузері Click
+        driver.get("https://dev.by/");
+        WebElement element = driver.findElement(By.xpath("//a[text()='Вход']"));
+        element.click();
 
 
     }

@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class main {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","c:/Users/38099/Downloads/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","c:/Users/arev/Downloads/chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
@@ -71,6 +71,18 @@ public class main {
         WebElement element1 = driver.findElement(By.xpath("//a[@id='choosecat']"));
         element1.click();
 
+        WebElement element2 = driver.findElement(By.xpath("//div/ul/li/a[@id='a-category-1532']"));
+        element2.click();
+
     }
 }
-// c:/Users/38099/Downloads/chromedriver.exe
+
+//c:/Users/38099/Downloads/chromedriver.exe
+//c:/Users/arev/Downloads/chromedriver.exe
+
+// //a[@id='a-category-1532']
+//$$(".abs.categorySelectContainer")
+//$$("ul[id='categorySelectList'] a[data-name='Авто']")
+
+// data-icon_class="a-category-1532"
+//   //div/ul/li/a[@id='a-category-1532']

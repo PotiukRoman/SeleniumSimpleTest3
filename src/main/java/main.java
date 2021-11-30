@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -77,11 +78,10 @@ public class main {
         element2.click();
 
         WebElement element3 = driver.findElement(By.xpath("//input[@name='q']"));
-        element3.sendKeys("жигулі");
-
-        WebElement element4 = driver.findElement(By.xpath("//input[@value='Знайти']"));
-        element4.click();
-
+        //element3.sendKeys("жигулі");
+       // element3.sendKeys("жигулі", Keys.ENTER);
+        element3.sendKeys("c:/Users/arev/Downloads/price.xlsx", Keys.ENTER);
+        
 
     }
 }

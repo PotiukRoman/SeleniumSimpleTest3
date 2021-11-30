@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,8 +13,15 @@ import java.util.concurrent.TimeUnit;
 public class main {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","c:/Users/38099/Downloads/chromedriver.exe");
-        WebDriver driver=new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized");
+        WebDriver driver = new ChromeDriver(options);
+      //WebDriver driver=new ChromeDriver();
+
+     //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+
 
 //очікування (явне і неявне)
 /*
@@ -49,10 +57,19 @@ public class main {
 */
 
 //Клік в браузері Click
-        driver.get("https://dev.by/");
+        /*
+        driver.get("https://www.olx.ua/uk/");
         WebElement element = driver.findElement(By.xpath("//a[text()='Вход']"));
         element.click();
+     */
 
+        driver.get("https://www.olx.ua/uk/");
+
+        WebElement element = driver.findElement(By.xpath("//input[@id='submit-searchmain']"));
+        element.click();
+
+        WebElement element1 = driver.findElement(By.xpath("//a[@id='choosecat']"));
+        element1.click();
 
     }
 }

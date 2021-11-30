@@ -15,6 +15,9 @@ public class main {
         WebDriver driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
+        //    WebElement element=(new WebDriverWait(driver, Duration.ofSeconds(2))
+        //            .until(ExpectedConditions.presenceOfElementLocated(By.id("123"))));
+
         driver.get("https://www.avito.ru");
         WebElement element = driver.findElement(By.xpath("(//a[text()='Личные вещи'])[1]"));
         // String par=element.getAttribute("offsetWidth");

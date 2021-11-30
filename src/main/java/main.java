@@ -14,16 +14,17 @@ public class main {
         System.setProperty("webdriver.chrome.driver","c:/Users/38099/Downloads/chromedriver.exe");
         WebDriver driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.get("https://www.avito.ru");
 
 //очікування (явне і неявне)
 /*
+            driver.get("https://www.avito.ru");
             WebElement element=(new WebDriverWait(driver, Duration.ofSeconds(2))
                     .until(ExpectedConditions.presenceOfElementLocated(By.id("123"))));
 */
 
 //властивості атрибутів тегів  різних елементів
 /*
+        driver.get("https://www.avito.ru");
         WebElement element = driver.findElement(By.xpath("(//a[text()='Личные вещи'])[1]"));
      // String par=element.getAttribute("offsetWidth");
         String par=element.getAttribute("href");
@@ -31,10 +32,22 @@ public class main {
 */
 
 //Отимання тексту getText()
-
+/*
+        driver.get("https://www.avito.ru");
         WebElement element = driver.findElement(By.cssSelector(".price-text-_WjC0.text-text-LurtD.text-size-s-BxGpL"));
         String par=element.getText();
         System.out.println(par);
+*/
+
+// Автоматизація тестування верстки getCssValue
+        driver.get("https://dev.by/");
+        WebElement element = driver.findElement(By.xpath("//a[text()='Вход']"));
+        // String par=element.getCssValue("display");
+        String par=element.getCssValue("transition");
+        System.out.println(par);
+
+
+
 
     }
 }

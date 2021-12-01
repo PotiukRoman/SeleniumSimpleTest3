@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class main {
@@ -85,7 +86,7 @@ public class main {
     */
 
 // Actions
-
+/*
         try {
             driver.get("https://crossbrowsertesting.github.io/drag-and-drop");
             Thread.sleep(2000);
@@ -109,7 +110,22 @@ public class main {
             Thread.sleep(10000);
             driver.quit();
         }
+*/
 
+//Waiting for the item to disappear
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+
+        try {
+            driver.get("http://pagination.js.org/");
+            Thread.sleep(2000);
+            List<WebElement> elements = driver.findElements(By.xpath("//div[@class='data-container'/ul/li]"));
+            List<WebElement> pages = driver.findElements(By.xpath(""));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }finally {
+        Thread.sleep(10000);
+        driver.quit();
+        }
 
     }
 }

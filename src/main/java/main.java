@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,8 +13,8 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class main {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","c:/Users/arev/Downloads/chromedriver.exe");
+    public static void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver","c:/Users/38099/Downloads/chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
@@ -64,9 +65,9 @@ public class main {
         element.click();
      */
 
+// OLX practice
+        /*
         driver.get("https://www.olx.ua/uk/");
-
-
 
         WebElement element = driver.findElement(By.xpath("//input[@id='submit-searchmain']"));
         element.click();
@@ -81,7 +82,34 @@ public class main {
         //element3.sendKeys("жигулі");
        // element3.sendKeys("жигулі", Keys.ENTER);
         element3.sendKeys("c:/Users/arev/Downloads/price.xlsx", Keys.ENTER);
-        
+    */
+
+// Actions
+
+        try {
+            driver.get("https://crossbrowsertesting.github.io/drag-and-drop");
+            Thread.sleep(2000);
+            WebElement element = driver.findElement(By.id("draggable"));
+            WebElement element2 = driver.findElement(By.id("droppable"));
+
+            Actions actions = new Actions(driver);
+          //  actions.dragAndDrop(element,element2).perform();
+          //  actions.dragAndDropBy(element,150,30).perform();
+            actions
+                    .moveToElement(element)
+                    .clickAndHold()
+                    .moveToElement(element2)
+                    .release()
+                    .build()
+                    .perform();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }finally {
+            Thread.sleep(10000);
+            driver.quit();
+        }
+
 
     }
 }
